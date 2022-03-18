@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="static/style.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <div class="container">
+    
+     <div class="title">ENTER PATIENT DETAILS</div>
+    
+    <div style="position: center;font-family: cursive;">
+      <p style="text-align: left;text-decoration-color:mediumblue ;">Input Guide</p>
+      <p style="text-align:left">prevalentHyp:Input 1 for yes or 0 for No</p>
+      <p style="text-align:left;">Diabetes:Input  1 for yes or 0 for No</p>
+      <p style="text-align:left">BPMeds:Input 1 for yes or 0 for No</p>
+      <p style="text-align:left;">gender:Input 1 for male or 0 for female</p>
+    </div>
+
+    <div class="content">
+      
+        <form action="{{ url_for('predict')}}" method="POST">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">sysBP</span>
+            <input type="text" placeholder="Enter systolic  blood pressure" name="sysBP" required>
+          </div>
+          <div class="input-box">
+            <span class="details">glucose</span>
+            <input type="text" placeholder="Enter glucose level in mg/dl" name="glucose" required>
+          </div>
+          <div class="input-box">
+            <span class="details">age</span>
+            <input type="text" placeholder="Enter age" name="age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">totChol</span>
+            <input type="text" placeholder="Enter cholesterin level in mg/dl" name="totChol" required>
+          </div>
+          <div class="input-box">
+            <span class="details">cigsPerDay</span>
+            <input type="text" placeholder="Enter cigarettes smoked in a day" name="cigsPerDay" required>
+          </div>
+          <div class="input-box">
+            <span class="details">diaBP</span>
+            <input type="text" placeholder="Enter diastolic pressure" name="diaBP" required>
+          </div>
+            <div class="input-box">
+            <span class="details">prevalentHyp</span>
+            <input type="text" placeholder="Was patient hypertensive?""   name="prevalentHyp" required>
+          </div>
+            <div class="input-box">
+            <span class="details">diabetes</span>
+            <input type="text" placeholder=" diabetes present? " name="diabetes" required>
+            
+
+
+          </div>
+            
+            <div class="input-box">
+            <span class="details">BPMeds</span>
+            <input type="text" placeholder="bloodpressure medication?" name="BPMeds" required>
+          </div>
+          <div class="input-box">
+            <span class="details">gender</span>
+            <input type="text" placeholder="male or female" name="gender" required>
+          </div>
+        </div>
+        
+        
+        <div class="button">
+          <input type="submit" value="Detect">
+        </div>
+      </form>
+    </center>
+   
+    <!-- Show predicted output using ML model --> 
+    <div>
+        <center>
+    <h1>{{ prediction_text }}</h1>
+        </center>
+    </div>
+ 
+    </div>
+  </div>
+
+  <!-- <script>
+    console.info(performance.navigation.type);
+    if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+}
+    if(performance.navigation.type == performance.navigation.TYPE_RELOAD){
+      console.info("This page has been reloades");
+      window.location.replace("http://127.0.0.1:5000/");
+    } else {
+      console.info("Page not reloaded");
+    }
+  </script> -->
+
+</body>
+</html>
