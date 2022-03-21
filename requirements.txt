@@ -2,8 +2,8 @@
 # $ conda create --name <env> --file <this file>
 # platform: win-64
 
-daal4py
-flask==2.2.24
+
+flask==2.0
 pandas==1.4
 pickle==12.1
 numpy==1.15.4
