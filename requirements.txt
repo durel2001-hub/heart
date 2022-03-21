@@ -5,7 +5,7 @@
 
 flask==2.0
 pandas==1.4
-pickle
+pickle5
 numpy==1.15.4
 
 
